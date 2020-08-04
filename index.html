@@ -1,0 +1,219 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel= "stylesheet" href="style.css">
+        <title>WeatherMate</title>
+	</head>
+
+
+	<body class="bg-gradient">
+
+<div class="header">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+ 	<div class="col-md-4 ">
+		<div class="logo"><img src="final-logo-1.png"></div>
+
+      </div>
+
+
+
+      <div class="col-md-6">
+
+          <form class="form-inline" method="POST">
+
+              <input class="form-control search-bar"  name="city" type="text" placeholder="Search">
+
+              <button class="btn btn-success" type="submit">Search</button>
+
+          </form>
+
+      </div>
+</nav>
+
+
+
+    </div>
+
+
+		<div class= "main-content">
+			<div class="container content-container">
+				<div class="jumbotron">
+					<div class= "city-row">
+						<div class="col-md-4 first-row">
+							<div class="city_name"><strong>City:</strong> {{data.city}} </div>
+						</div>
+						<div class="col-md-4 first-row">
+								<img src= "temp-min.png" class="temp-icon">
+								<div class="curr_temp"><strong>Temperature:</strong> {{data.temp}} C </div>
+						</div>
+						<div class="col-md-4 first-row">
+							<div class="content-description"><strong>Description:</strong> {{data.Day1.week_description}}</div>
+						</div>
+					</div>
+
+					<div class= "col-md-4 col-content">
+						<img src= "pressure.png" class="wind-speed-icon icon">
+						<div class="curr_pressure"><strong>Pressure:</strong> {{data.pressure}} hPa</div>
+
+					</div>
+					<div class= "col-md-4 col-content">
+						<img src= "humid.png" class="wind-speed-icon icon">
+						<div class="curr_humidity"><strong>Humidity:</strong> {{data.humidity}} %</div>
+					</div>
+
+					<div class= "col-md-4 col-content">
+						<img src= "wind-speed.png" class="wind-speed-icon icon">
+						<div class="curr_wind"><strong>Wind Speed:</strong> {{data.wind_speed}} m/s</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="container">
+				<div class="heading"> 5 Days of Daily forecast </div>
+				<div>
+					<div class="card ">
+						<div class="row">
+							<div class="col-md-4 label-content content-date"><strong>Date: {{data.Day0.date}}</strong></div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-min.png" class="icon"><strong>Min_Temp:</strong> {{data.Day0.min_temp}} C</div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-max.png" class="icon"><strong>Max_Temp:</strong> {{data.Day0.max_temp}} C  </div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 label-content week-heading"><img src="pct.png" class="icon"><strong>Precipitation:</strong> {{data.Day0.precipitation}}</div>
+							<div class="col-md-5 label-content cloud-desc"><img src="cloudy.png" class="icon"><strong>Cloudiness:</strong> {{data.Day0.cloudiness}}</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-6 label-content">
+
+							</div>
+							<div class="col-md-6 label-content">
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+					<div class="card">
+						<div class="row">
+							<div class="col-md-4 label-content content-date"><strong>Date: {{data.Day1.date}}</strong></div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-min.png" class="icon"><strong>Min_Temp:</strong> {{data.Day1.min_temp}} C</div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-max.png" class="icon"><strong>Max_Temp:</strong> {{data.Day1.max_temp}} C  </div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 label-content week-heading"><img src="pct.png" class="icon"><strong>Precipitation:</strong> {{data.Day1.precipitation}}</div>
+							<div class="col-md-5 label-content cloud-desc"><img src="cloudy.png" class="icon"><strong>Cloudiness:</strong> {{data.Day1.cloudiness}}</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-6 label-content">
+
+							</div>
+							<div class="col-md-6 label-content">
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="card">
+						<div class="row">
+							<div class="col-md-4 label-content content-date"><strong>Date: {{data.Day2.date}}</strong></div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-min.png" class="icon"><strong>Min_Temp:</strong> {{data.Day2.min_temp}} C</div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-max.png" class="icon"><strong>Max_Temp:</strong> {{data.Day2.max_temp}} C  </div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 label-content week-heading"><img src="pct.png" class="icon"><strong>Precipitation:</strong> {{data.Day2.precipitation}}</div>
+							<div class="col-md-5 label-content cloud-desc"><img src="cloudy.png" class="icon"><strong>Cloudiness:</strong> {{data.Day2.cloudiness}}</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-6 label-content">
+
+							</div>
+							<div class="col-md-6 label-content">
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card">
+						<div class="row">
+							<div class="col-md-4 label-content content-date"><strong>Date: {{data.Day3.date}}</strong></div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-min.png" class="icon"><strong>Min_Temp:</strong> {{data.Day3.min_temp}} C</div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-max.png" class="icon"><strong>Max_Temp:</strong> {{data.Day3.max_temp}} C  </div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 label-content week-heading"><img src="pct.png" class="icon"><strong>Precipitation:</strong> {{data.Day3.precipitation}}</div>
+							<div class="col-md-5 label-content cloud-desc"><img src="cloudy.png" class="icon"><strong>Cloudiness:</strong> {{data.Day3.cloudiness}}</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col-md-6 label-content">
+
+							</div>
+							<div class="col-md-6 label-content">
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="card">
+						<div class="row">
+							<div class="col-md-4 label-content content-date"><strong>Date: {{data.Day4.date}}</strong></div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-min.png" class="icon"><strong>Min_Temp:</strong> {{data.Day4.min_temp}} C</div>
+							<div class="col-md-4 label-content week-heading"><img src="temp-max.png" class="icon"><strong>Max_Temp:</strong> {{data.Day4.max_temp}} C  </div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 label-content week-heading"><img src="pct.png" class="icon"><strong>Precipitation:</strong> {{data.Day4.precipitation}}</div>
+							<div class="col-md-5 label-content cloud-desc"><img src="cloudy.png" class="icon"><strong>Cloudiness:</strong> {{data.Day4.cloudiness}}</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col-md-6 label-content">
+
+							</div>
+							<div class="col-md-6 label-content">
+
+							</div>
+						</div>
+					</div>
+
+			</div>
+
+
+		</div>
+		<div class= "footer">
+			<div class="footer-terms">
+                    <a href="#" target="_blank">About Us </a> |
+					<a href="" target="_blank">Terms and Conditions </a> |
+                    <a href="#" target="_blank">Privacy Policy </a> |
+					<a href="" target="_blank">Contact Us </a>
+                </div>
+
+                <div class="copyright-text">
+                    <h5>© 2020 Copyright: WeatherMate.com</h5>
+                        </div>
+		</div>
+
+
+
+	</body>
+
+
+</html>
